@@ -1,18 +1,7 @@
 var generateBtn = document.querySelector("#generate");
 
-function writePassword() {
-
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
 function generatePassword(){
+
   var length = passLength();
   var charTypes = passChar();
   var password = randomPass(length, charTypes);
@@ -53,13 +42,38 @@ function randomPass(length, charTypes) {
     var charset = "";
     if (charTypes.lowerC) charset += "abcdefghijklmnopqrstuvwxyz";
     if (charTypes.numb) charset += "0123456789";
-    if (charTypes.upperC) charset += "ABCDEFGFIJKLMNOPQRSTUVWXYZ"
+    if (charTypes.upperC) charset += "ABCDEFGFIJKLMNOPQRSTUVWXYZ";
+    if (charTypes.specialChar) charset += "!@#$%^&*()_+~`|}{[];:?<>,./-=";
+
+    var password = "";
+    for (var i = 0; i < length; i++) {
+    var randGen = Math.floor(Math.random() * charset.length); password += charset.charAt(randGen);
+    }
+    return password;
 }
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+function writePassword() {
+
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;
+  
+  }
 
 
+  // ask for length of a password (prompt)
+    //save to a variable
+// check the length provided by user is a number and between 8-128
 
-
+// confirm tag: 4 times for uppercase, lowercase, numbers, and special characters
+    // save to variable
+//check if uppercase or lowercase or number or special character is there 
+    //(confirm/ TvsF)
+  // combine the confirmed arrays
 
 //create an array for all character types seperatly
 //create an aray  to have a new password with length provided by user [ ]
@@ -67,7 +81,6 @@ function randomPass(length, charTypes) {
 
 //return the value and display on the page
 
-var specialChar = "!@#$%^&*()_+~`|}{[];:?<>,./-=";
-var numb = "1234567890";
-var upperC = "ABCDEFGFIJKLMNOPQRSTUVWXYZ";
-var lowerC = "abcdefghijklmnopqrstuvwxyz";
+
+
+// ask tomorrow why the alert on line 16 isnt working and why the password doesnt generate
