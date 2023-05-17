@@ -1,14 +1,15 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
-var specialCharacters = ['!', '@', '#', '$', '&', '*', '(', '^', ')', '?'];
-var numb = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var upperC = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-var lowerC = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+var specialChar = "!@#$%^&*()_+~`|}{[];:?<>,./-=";
+var numb = "1234567890";
+var upperC = "ABCDEFGFIJKLMNOPQRSTUVWXYZ";
+var lowerC = "abcdefghijklmnopqrstuvwxyz";
+
+var passLength = prompt("Please enter the length you want your password to be.");
 
 // Write password to the #password input
 function writePassword() {
   // alert("Workng");
-  var password = generatePassword();
+  var password = generatePassword(8-128);
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
