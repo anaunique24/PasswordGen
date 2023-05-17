@@ -1,5 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var specialCharacters = ['!', '@', '#', '$', '&', '*', '(', '^', ')', '?'];
+var numb = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var upperC = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var lowerC = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
 
 // Write password to the #password input
 function writePassword() {
@@ -14,9 +18,9 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-function generatePassword(){
-  return "hello"
-}
+
+
+
 
 // ask for length of a password (prompt)
     //save to a variable
