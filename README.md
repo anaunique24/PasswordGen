@@ -17,4 +17,4 @@ MIT License
 https://github.com/anaunique24/PasswordGen/assets/128003940/c421dfaa-bbaf-4866-b753-6891f0487c96
 
 ## Deployed Link
-
+https://anaunique24.github.io/PasswordGen/
