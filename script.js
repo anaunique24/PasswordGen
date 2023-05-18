@@ -1,6 +1,6 @@
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword(){
+function generPassword(){
 
   var length = passLength();
   var charTypes = passChar();
@@ -11,8 +11,9 @@ function generatePassword(){
 function passLength() {
     var length = parseInt(prompt ("Please enter the length you want your password to be (8-128 characters)"));
     
-    while (isNaN(length || length < 8 || length > 128)) {
+    while (isNaN(length < 8 || length > 128)) {
         length = parseInt(alert("Invalid length. Must be between 8 and 128 characters."));
+        console.log(length);
     }
     return length;
 }
@@ -52,12 +53,16 @@ function randomPass(length, charTypes) {
     return password;
 }
 
+function displayPassword(password) {
+    console.log("Your Randomized password is " + password)
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 function writePassword() {
 
-    var password = generatePassword();
+    var password = generPassword();
     var passwordText = document.querySelector("#password");
   
     passwordText.value = password;
@@ -83,4 +88,4 @@ function writePassword() {
 
 
 
-// ask tomorrow why the alert on line 16 isnt working and why the password doesnt generate
+// ask tomorrow why the password doesnt generate on screen
