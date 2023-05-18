@@ -5,17 +5,21 @@ function generPassword(){
   var length = passLength();
   var charTypes = passChar();
   var password = randomPass(length, charTypes);
-    displayPassword(password);
+    // displayPassword(password);
+    return password
 }
 
 function passLength() {
     var length = parseInt(prompt ("Please enter the length you want your password to be (8-128 characters)"));
     
-    while (isNaN(length < 8 || length > 128)) {
+    if (length < 8 || length > 128) {
         length = parseInt(alert("Invalid length. Must be between 8 and 128 characters."));
         console.log(length);
     }
+    if (Number.isNaN(length)) {alert ("Please chose a numerical value.")
+}
     return length;
+
 }
 
 function passChar() {
@@ -53,11 +57,12 @@ function randomPass(length, charTypes) {
     return password;
 }
 
-function displayPassword(password) {
-    console.log("Your Randomized password is " + password)
-}
+// function displayPassword(password) {
+//     console.log("Your Randomized password is " + password)
+// }
 
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
 
 function writePassword() {
@@ -69,7 +74,12 @@ function writePassword() {
   
   }
 
-
+ 
+ 
+ 
+ 
+ 
+ 
   // ask for length of a password (prompt)
     //save to a variable
 // check the length provided by user is a number and between 8-128
