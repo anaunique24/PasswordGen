@@ -5,7 +5,6 @@ function generPassword(){
   var length = passLength();
   var charTypes = passChar();
   var password = randomPass(length, charTypes);
-    // displayPassword(password);
     return password
 }
 
@@ -57,12 +56,6 @@ function randomPass(length, charTypes) {
     return password;
 }
 
-// function displayPassword(password) {
-//     console.log("Your Randomized password is " + password)
-// }
-
-// Add event listener to generate button
-
 generateBtn.addEventListener("click", writePassword);
 
 function writePassword() {
@@ -73,10 +66,6 @@ function writePassword() {
     passwordText.value = password;
   
   }
-
- 
- 
- 
  
  
  
